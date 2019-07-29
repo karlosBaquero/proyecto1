@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h1>
+      Datos del Propietario
+    </h1>
+  </div>
+  <br>
+</div>
+
+
+
+<label>Identificacion:
+  <input [(ngModel)]="propietario.identificacion" class="form-control" placeholder="digite el id" type="text" />
+</label>
+
+<div class="row">
+  <div class="col-lg-2 col-md-4">
+    <label>Primer Nombre:
+      <input [(ngModel)]="propietario.primer_Nombre" class="form-control" type="text" />
+    </label>
+  </div>
+  <div class="col-lg-2 col-md-4">
+    <label>Segundo Nombre:
+      <input [(ngModel)]="propietario.segundo_Nombre" class="form-control" type="text" />
+    </label>
+  </div>
+
+  <br>
+</div>
+<div class="row">
+  <div class="col-lg-2 col-md-4">
+    <label>Primer Apellido:
+      <input [(ngModel)]="propietario.primer_Apellido" class="form-control" type="text" />
+    </label>
+  </div>
+  <div class="col-lg-2 col-md-4">
+    <label>Segundo Apellido:
+      <input [(ngModel)]="propietario.segundo_Apellido" class="form-control" type="text" />
+    </label>
+  </div>
+</div>
+
+<br>
+<label>Telefono:
+  <input [(ngModel)]="propietario.telefono" class="form-control" type="text" />
+</label>
+<br>
+<br>
+<div class="form-group">
+  <button (click)="add()" class="btn btn-alarm"><b>Agregar Propietario</b> </button>
+</div>

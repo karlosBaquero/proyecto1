@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+  <br>
+  <h2 class="header text-left">
+    <img src="assets/Imagenes/pagos.png" width="60" height="60">
+    Lista de carteras
+  </h2>
+
+  <div class="row">
+
+    <!--Columna de la tabla-->
+    <div class="col-lg-8 ">
+      
+    <app-lista-carteras [filtrado]="filtro"></app-lista-carteras>
+    </div>
+    <!--Columna de filtrado-->
+    <br>
+    <div class="col-lg-4">
+      <app-opciones-filtrado #filtro></app-opciones-filtrado>
+    </div>
+  </div>
+
+  <br>
+  <p><b>Total de Carteras Inicial: {{totalIni}}</b> </p>
+  <br>
+  <p><b>Total de Carteras Actual: {{totalAct}}</b> </p>
+  <br>
+
+</div>

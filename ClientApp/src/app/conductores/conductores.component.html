@@ -1,0 +1,20 @@
+<div class="container">
+  <br>
+  <div class="row">
+
+    <!--Columna de la tabla-->
+    <div class="col-lg-8 col-md-12">
+      <app-list-conductores [filtrado]="filtro" [editable]="true"></app-list-conductores>
+      <br><br>
+    </div>
+    <!--Columna de filtrado-->
+    <br>
+  
+      <app-opciones-filtrado #filtro></app-opciones-filtrado>
+    
+  </div>
+  <br>
+  <button type="button" class="btn button-lg" routerLink="/agregarConductor"><b>Agregar Conductor</b></button>
+  <br>
+
+</div>

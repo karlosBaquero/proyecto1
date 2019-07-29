@@ -1,0 +1,19 @@
+<div class="container">
+  <br>
+  <div class="row">
+    
+    <!--Columna de la tabla-->
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <app-list-propietarios [filtrado]="filtro" [editable]="true"></app-list-propietarios>
+      <br><br>
+    </div>
+    <!--Columna de filtrado-->
+    <br>
+    <app-opciones-filtrado #filtro></app-opciones-filtrado>
+  </div>
+
+  <br>
+  <button type="button" class="btn button-lg" routerLink="/agregarPropietario" ><b>Agregar Propietario</b></button>
+  <br>
+
+</div>

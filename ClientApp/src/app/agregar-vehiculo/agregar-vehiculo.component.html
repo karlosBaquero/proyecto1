@@ -1,0 +1,171 @@
+<div class="row">
+  <div class="col-lg-6">
+    <h1>
+      Datos del Vehículo
+    </h1>
+  </div>
+  <br>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <br>
+        <label>Placa:
+          <input [(ngModel)]="vehiculo.placa" name="fieldPlaca" class="form-control" placeholder="digite placa"
+            type="text" ngDefaultControl />
+        </label>
+        <br>
+
+        <label>Marca:
+          <input [(ngModel)]="vehiculo.marca" name="fieldMarca" class="form-control" placeholder="digite marca "
+            type="text" ngDefaultControl />
+        </label>
+        <br>
+        <label>Modelo:
+          <input [(ngModel)]="vehiculo.modelo" name="fieldModelo" class="form-control" placeholder="digite modelo"
+            type="text" ngDefaultControl />
+        </label>
+      </div>
+      <div class="col-lg-6">
+
+        <p>Fecha de afiliacion</p>
+
+        <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+
+        <hr />
+
+        <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()"> Hoy</button>
+        <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">Mes actual</button>
+
+        <hr />
+
+        <br>
+        <br>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <h3>
+          Seleccione un conductor
+        </h3>
+        <div class="container">
+          <!-- Button to Open the Modal -->
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Seleccionar
+          </button>
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                  <div class="container">
+                    <app-list-conductores [editable]="false" [filtrado]="filtro" name="Lista"
+                      (seleccion)="selectConductor($event)" ngDefaultControl>
+                    </app-list-conductores>
+                    <app-opciones-filtrado #filtro></app-opciones-filtrado>
+                  </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <label>Conductor Seleccionado:
+          <input [(ngModel)]="conductor.nombre_Completo" *ngIf="conductor!=null" class="form-control" placeholder=" nombre"
+            type="text" disabled />
+        </label>
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class="col-lg-6 col-md-6">
+        <h3>
+          Seleccione un Propietario
+        </h3>
+        <div class="container">
+          <!-- Button to Open the Modal -->
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+            Seleccionar
+          </button>
+
+          <!-- The Modal -->
+          <div class="modal" id="myModal2">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                  <div class="container">
+                    <app-list-propietarios [editable]="false" [filtrado]="filtro2" name="ListaProp"
+                      (seleccionProp)="selectPropietario($event)" ngDefaultControl>
+                    </app-list-propietarios>
+                    <app-opciones-filtrado #filtro2></app-opciones-filtrado>
+                  </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <label>Propietario Seleccionado:
+          <input [(ngModel)]="propietario.nombre_Completo" *ngIf="propietario!=null" class="form-control" placeholder=" nombre"
+            type="text" disabled />
+        </label>
+      </div>
+      <br>
+
+      <br>
+
+
+      <br>
+      <br>
+    </div>
+    <label>Deuda Inicial:
+      <input [(ngModel)]="cartera.DeudaInicial" name="fielddeuda" class="form-control"
+        placeholder="digite deuda inicial" type="number" ngDefaultControl />
+    </label>
+
+    <div class="form-group">
+      <button (click)="add()" class="btn btn-alarm" style="background-color: gold"><strong>Agregar Vehiculo</strong>
+      </button>
+    </div>
+  </div>
+</div>

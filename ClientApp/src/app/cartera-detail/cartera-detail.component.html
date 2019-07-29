@@ -1,0 +1,38 @@
+<div class="container" *ngIf="conductor!=null">
+  <div class="row">
+    <div class="col-lg-6">
+        <h4>Detalles Conductor</h4>
+        <a><strong>Identificación: </strong>{{conductor.identificacion}}</a><br>
+        <a><strong>Nombre Conductor: </strong>{{conductor.nombre_Completo}}</a><br>
+        <a><strong>N° Licencia: </strong>{{conductor.numLicencia}}</a><br>
+        <a><strong>Telefono: </strong>{{conductor.telefono}}</a><br><br>
+    </div>
+
+    <div class="col-lg-6" *ngIf="vehiculo!=null">
+        <h4>Detalles Vehiculo</h4>
+        <a><strong>Placa: </strong>{{vehiculo.placa}}</a><br>
+        <a><strong>Modelo: </strong>{{vehiculo.modelo}}</a><br>
+        <a><strong>Marca: </strong>{{vehiculo.marca}}</a><br>
+    </div>
+
+  </div>
+  
+</div>
+
+
+<a *ngIf="cartera">
+  <h3>Lista de abonos realizados</h3>
+
+  <app-list-abonos [identificacion]="cartera.id"></app-list-abonos>
+</a>
+
+<label>Ingrese valor del abono
+  <input class="form-control" type="number" name="valor" [(ngModel)]="abono.valor" />
+</label>
+
+<button type="button" class="btn button-lg" (click)="addAbono()" style="background-color: gold"><b>Abonar</b></button>
+<br>
+<br>
+<button type="button" class="btn button-lg" (click)="deleteCartera()" style="background-color: gold"><b>Eliminar Cartera</b></button>
+<br>
+<br>

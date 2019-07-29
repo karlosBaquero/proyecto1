@@ -1,0 +1,22 @@
+<div class="container">
+  <br>
+  <div class="row">
+    
+    <!--Columna de la tabla-->
+    <div class="col-lg-8 ">
+      <app-list-vehiculos [filtrado]="filtro"></app-list-vehiculos>
+      <br><br>
+    </div>
+    <!--Columna de filtrado-->
+    <br>
+    <div class="col-lg-4">
+        <app-opciones-filtrado #filtro></app-opciones-filtrado>
+    </div>  
+  </div>
+
+  <br>
+  <button type="button" class="btn button-lg" routerLink="/agregarVehiculo" ><b>Agregar Vehiculo</b></button>
+  <br>
+  <br>
+
+</div>

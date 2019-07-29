@@ -1,0 +1,25 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-sm mb-0">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID conductor</th>
+        <th scope="col">Deuda Actual</th>
+        <th scope="col">Deuda Inicial</th>
+        <th scope="col">Fecha Ultimo Pago</th>
+        <th scope="col">Último Mes Pagado</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carteras | filtro:filtrado.filterWord">
+        <td>{{cart.identificacion}}</td>
+        <td>{{cart.DeudaActual}}</td>
+        <td>{{cart.DeudaInicial}}</td>
+        <td>{{cart.FechaUltimoPago | date: "dd/MM/y"}}</td>
+        <td>{{cart.MesesPagados}}</td>
+        <td>{{cart.Estado}}</td>
+        <td> <button class="button" routerLink="/detail/{{cart.id}}">Abrir</button></td>       
+      </tr>
+    </tbody>
+  </table>
+</div>
